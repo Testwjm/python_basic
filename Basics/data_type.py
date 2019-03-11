@@ -247,4 +247,33 @@ print(a ^ b)  # a和b中不同时存在的元素
 # 字典是一种映射类型，字典用{}标识，它是一个无序的键(key):值(value)的集合。
 # 键（key）必须使用不可变类型。
 # 在同一个字典中，键（key）必须是唯一的。
+dict = {}  # 创建空字典
+dict['one'] = '菜鸟教程'
+dict[2] = '菜鸟工具'
+tinydict = {'name': 'runoob', 'code': 1, 'site': 'www.baidu.com'}
+print(dict['one'])  # 输出键为'one'的值
+print(dict[2])  # 输出键为2的值
+print(tinydict)  # 输出完整的字典
+print(tinydict.keys())  # 输出所有键
+print(tinydict.values())  # 输出所有值
+
+"""Python数据类型转换"""
+# 有时候，我们需要对数据内置的类型进行转换，数据类型的转换，你只需要将数据类型作为函数名即可。
+# 以下几个内置的函数可以执行数据类型之间的转换。这些函数返回一个新的对象，表示转换的值。
+x =1
+int(x[, base])  # 将x转换为一个整数
+float(x)  # 将x转换到一个浮点数
+complex(real[,imag])  # 创建一个复数
+str(x)  # 将对象x转换为字符串
+repr(x)  # 将对象x转换为表达式字符串
+eval(str)  # 用来计算在字符串中的有效python表达式，并返回一个对象
+tuple(x)  # 将序列x转换为一个元组
+list(x)  # 将序列x转换为一个列表
+set(x)  # 将序列x转换为可变集合
+dict(d)  # 创建一个字典，d必须是一个序列（key,value)元组
+frozenset(s)  # 转换为不可变集合
+chr(x)  # 将一个整数转换为一个字符
+ord(x)  # 将一个字符转换为它的整数值
+hex(x)  # 将一个整数转换为一个十六进制字符串
+oct(x)  # 将一个整数转换为一个八进制字符串
 
