@@ -1,91 +1,100 @@
 """内置函数"""
 abs()  # 返回数字的绝对值
-# abs(x)  # x : 数值表达式  # abs(-45)
+# abs(x)  # x : 数值表达式，可以是整数，浮点数，复数  # abs(-45)
 
-divmod()  # 把除数和余数运算结果结合起来，返回一个包含商和余数的元组
-# divmod(a, b)  # a:数字，b:数字  # divmod(7, 3)
+dict()
 
-input()  #
+help()
 
-open()
+min()
 
-staticmethod()
+setattr()
 
 all()
 
-enumerate()
+dir()
 
-int()
+hex()
 
-ord()
+next()
 
-str()
+slice()
 
 any()
 
-eval()
+divmod()
 
-isinstance()
+id()
 
-pow()
+sorted()
 
-sum()
+ascii()
 
-basestring()
+enumerate()
 
-execfile()
+input()
 
-issubclass()
+oct()
 
-print()
-
-super()
+staticmethod()
 
 bin()
 
-file()
+eval()
 
-iter()
+int()
 
-property()
+open()
 
-tuple()
+str()
 
 bool()
 
-filter()
+exec()
 
-len()
+isinstance()
 
-range()
+ord()
 
-type()
+sum()
 
 bytearray()
 
+filter()
+
+issubclass()
+
+pow()
+
+super()
+
+bytes()
+
 float()
 
-list()
+iter()
 
-raw_input()
+print()
 
-unichr()
+tuple()
 
 callable()
 
 format()
 
-locals()
+len()
 
-reduce()
+property()
+
+type()
 
 chr()
 
 frozenset()
 
-long()
+list()
 
-reload()
+range()
 
 vars()
 
@@ -93,60 +102,37 @@ classmethod()
 
 getattr()
 
-map()
+locals()
 
 repr()
-
-xrange()
-
-cmp()
-
-globals()
-
-max()
-
-reverse()
 
 zip()
 
 compile()
 
-hasattr()
+globals()
 
-memoryview()
+map()
 
-round()
+reversed()
 
 __import__()
 
 complex()
 
-hash()
+hasattr()
 
-min()
+max()
 
-set()
+round()
 
 delattr()
 
-help()
+hash()
 
-next()
+memoryview()
 
-setattr()
+set()
 
-dict()
 
-hex()
 
-slice()
-
-dir()
-
-id()
-
-oct()
-
-sorted()
-
-exec()
