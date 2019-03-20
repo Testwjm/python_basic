@@ -86,3 +86,72 @@ len(t)
 zlib.decompress(t)
 zlib.crc32(s)
 
+# 性能度量
+# 有些用户对了解解决同一问题的不同方法之间的性能差异很感兴趣，python提供了一个度量工具，为这些问题提供了直接答案
+# 例如，使用元组封装和拆封来交换元素看起来要比使用传统的方法要诱人的多，timeit证明了现代的方法更快一些
+from timeit import Timer
+Timer('t = a; a = b; b = t', 'a = 1; b = 2').timeit()
+Timer('a,b = b,a', 'a = 1; b = 2').timeit()
+# 相对于timeit的细粒度，:mod:profile和pstats模块提供了针对更大代码块的时间度量工具
+
+# 测试模块
+# 开发高质量软件的方法之一是为每一个函数开发测试代码，并且在开发过程中经常进行测试
+# doctes模块提供了一个工具，扫描模块并根据程序中内嵌的文档字符串执行测试
+# 测试构造如同简单的将它的输出结果剪切并粘贴到文档字符串中
+# 通过用户提供的例子，它强化了文档，允许doctest模块确认代码的结果是否与文档一致：
+def average(values):
+    return sum(values) / len(values)
+
+import doctest
+doctest.testmod()  # 自动验证嵌入测试
+
+# unittest模块不像doctest模块那么容易使用，不过它可以在一个独立的文件里提供一个更全面的测试集：
+import unittest
+class TestStatisticalFunctions(unittest.TestCase):
+
+    def test_average(self):
+        self.assertEqual([20, 30, 70], 40.0)
+        self.assertEqual(round(average(1, 5, 7), 1), 4.3)
+        self.assertRaises(ZeroDivisionError, average, [])
+        self.assertRaises(TypeError, average, 20, 30, 70)
+
+unittest.main()  # 从命令行调用所有测试
+
+# 关于urlopen的补充
+# 处理get请求，不传data，则为get请求
+import urllib
+from urllib.request import urlopen
+from urllib.parse import urlencode
+
+url = 'http://www.baidu,com/login'
+data = {'username': 'admin', 'password': 123456}
+req_data = urlencode(data)  # 将字典类型的请求数据变为url编码
+res = urlopen(url+'?'+req_data)  # 通过urlopen方法访问拼接好的url
+res = res.read().decode()  # read()方法是读取返回数据内容，decode是转换返回数据的bytes格式为str
+
+print(res)
+# 处理post请求，如果传了data，则为post请求
+
+import urllib
+from urllib.request import Request
+from urllib.parse import urlencode
+
+url = 'http://www.baidu.com/login'
+data = {'username': 'admin', 'password': 123456}
+data = urlencode(data)  # 将字典类型的请求数据转变为url编码
+data = data.encode('ascii')  # 将url编码类型的请求数据转变为bytes类型
+req_data = Request(url, data)  # 将url和请求数据处理为一个Request对象，提供urlopen调用
+with urlopen(req_data) as res:
+    res = res.read().decode()  # 方法是读取返回数据内容，decode是转换返回数据的bytes格式为str
+print(res)
+
+# 时间和日期补充
+# 今天 today = datetime.date.today()
+# 昨天 yesterday = today - datetime.timedelta(days=1)
+# 上个月 last_month = today.month - 1 if today.month - 1 else 12
+# 当前时间戳 time_stamp = time.time()
+# 时间戳转datetime datetime.datetime.fromtimestamp(time_stamp)
+# datetime转时间戳 int(time.mktime(today.timetuple()))
+# datetime转字符串 today_str = today.strftime("%Y-%m-%d")
+# 字符串转datetime today = datetime.datetime.strptime(today_str, "%Y-%m-%d")
+# 补时差 today + datetime.timedelta(hours=8)
