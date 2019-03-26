@@ -13,6 +13,9 @@ help()  # 用于查看函数和模块的详细说明
 min()  # 返回给定参数的最小值，参数可以是序列
 # min(x, y, z...)  # x,y,z：数值表达式  # min(-10, 10, 100)
 
+max()  # 返回给定参数的最大值，参数可以为序列
+# max(x, y, z)  # x、y、z：数值表达式  # max(-20, 10, 20)
+
 setattr()  # 用于设置属性值，该属性不一定是存在的
 # setattr(object, name, value)  # object：对象 name：字符串，对象属性 value：属性值
 # 对于已存在的属性进行赋值
@@ -107,7 +110,7 @@ oct()  # 将一个整数转换成8进制字符串
 staticmethod()  # 返回函数的静态方法，该方法不强制要求传递参数，如下声明一个静态方法：
 class C(object):
     @staticmethod
-    def f(arg1, arg2,...):
+    def f(arg1, arg2, argN):
         ...
 # 以上实例声明了静态方法f，类可以不用实例化就可以调用该方法C.f()，当然也可以实例化后调用C().f()
 class C(object):
@@ -244,8 +247,6 @@ if __name__ == '__main__':
     fooChild = FooChild()
     fooChild.bar('Hello World')
 
-
-
 float()  # 用于将整数和字符串转换成浮点数
 # class float([x])  # x：整数或字符串  # float('123')
 
@@ -271,58 +272,115 @@ callable()  # 用于检查一个对象是否可调用，如果返回True，objec
 # 对于函数、方法、lambda 函式、 类以及实现了 __call__ 方法的类实例, 它都返回 True。
 # callable(object)  # object：对象  # callable(add)  函数返回True
 
-format()
+format()  # python2.6开始，新增了一种格式化字符串的函数str.format()，它增强了字符串格式化的功能
+# 基本语法是通过{}和：来代替以前的%，format函数可以接受无限个参数，位置可以不按顺序
 
 len()  # 返回对象（字符、列表、元组等）长度或项目个数
 # len(s)  # s：对象  str = 'run'  len(str)   字符串的长度
 
-property()
+property()  # 作用是在新式类中返回属性值
+# class property([fget[, fset[, fdel[, doc]]]])  # fget：获取属性值的函数  fset：设置属性值的函数  fdel：删除属性值函数 doc：属性描述信息
 
 frozenset()  # 返回一个冻结的集合，冻结后集合不能再添加或删除任何元素
 # class frozenset([iterable])  # iterable：可迭代的对象，比如列表、字典、元组等等
 # frozenset(['r', 'u', 'n'])  # 创建不可变集合
 
-list()
+list()  # 用于将元组或字符串转换为列表
+# 注意：元组与列表是非常类似的，区别在于元组的元素值不能修改，元组是放在括号中，列表是放于方括号中
+# list(seq)  # seq：要转换为列表的元组或字符串  # str='Hello World'  list1=list(str)  print(list)
 
-range()
+range()  # 返回一个可迭代对象（类型是对象），而不是列表类型，所以打印的时候不会打印列表
+# range(stop)
+# range(start, stop[, step])  # start：计数从start开始，默认是从0开始，例如range(5)等价于range(0, 5)  stop：计数到stop结束，
+# 但不包括stop，例如：range（0， 5） 是[0, 1, 2, 3, 4]没有5  step：步长，默认为1，例如：range（0， 5） 等价于 range(0, 5, 1)
+# list(range(0, 30, 5))  # [0, 5, 10, 15, 20, 25]
 
-vars()
+vars()  # 返回对象object的属性和属性值的字典对象
+# vars([object])  # object：对象  # print(vars())
 
-classmethod()
+classmethod()  # 装饰器，对应的函数不需要实例化，不需要self参数，但第一个参数需要是表示自身类的cls参数，可以来调用类的属性，类的方法，实例化对象等
+class A(object):
+    bar = 1
+    def func1(self):
+        print('foo')
+    @classmethod
+    def func2(cls):
+        print('func2')
+        print(cls.bar)
+        cls().func1()  # 调用foo方法
 
+A.func2()  # 不需要实例化
 
+locals()  # 会以字典类型返回当前位置的全部局部变量
+# 对于函数，方法，lambda函数，类，以及实现了__call__方法的类实例，它都返回True
+def run(arg):  # 两个局部变量：arg、z
+    z = 1
+    print(locals())
+run(4)  # 返回一个名字/值对的字典
 
-locals()
+globals()  # 以字典类型返回当前位置的全部全局变量
+a = 'run'
+print(globals())  # globals函数返回一个全局变量的字典，包括所有导入的变量
 
+zip()  # 用于将可迭代的对象作为参数，将对象中对应的元素大包成一个个元组，然后返回由这些元组组成的对象，这样做的好处是节约了不少的内存
+# 我们可以使用list()转换来输出列表，如果各个迭代器的元素个数不一致，则返回列表长度与最短的对象相同，利用*号操作符，可以将元组解压为列表
+# zip([iterable,...])  # iterable：一个或多个迭代器  # a=[1, 2, 3]  zip(a)
 
+compile()  # 将一个字符串编译为字节代码
+# compile(source, filename, mode[, flags[, dont_inherit]])  # source：字符串或者AST（Abstract Syntax Trees）对象
+# filename：代码文件名称，如果不是从文件读取代码则传递一些可辨认的值  mode：指定编译代码的种类，可以指定为exce、eval、single
+# flags：变量作用域，局部命名空间，如果被提供，可以是任何映射对象  flags和dont_inherit是用来控制编译源码时的标志
+str = '3*4+5'
+a = compile(str, '', 'eval')
+eval(a)
 
-zip()
+map()  # 会根据提供的函数对指定序列做映射
+# 第一个参数function以参数序列中的每一个元素调用function函数，返回包含每次function函数返回值的新列表
+# map(function, iterable,...)  # function：函数  iterable：一个或多个序列
+def square(x):
+    return x ** 2
+map(square, [1, 2, 3, 4, 5])
 
-compile()
+reversed()  # 返回一个反转的迭代器
+# reversed(seq)  # seq：要转换的序列，可以是tuple，string，list或range
+seqString = 'run'
+print(list(reversed(seqString)))
 
-globals()
+__import__()  # 用于动态加载类和函数
+# 如果一个模块经常变化就可以使用__import__()来动态载入
+# __import__(name[, globals[, locals[, fromlist[, level]]]])  # name：模块名
 
-map()
+complex()  # 用于创建一个值为real+imag * j的复数或者转化一个字符串或数为复数，如果第一个参数为字符串，则不需要指定第二个参数
+# class complex([real[, imag]])  # real：int,long,float或字符串  imag：int,long,float  # complex(1)
 
-reversed()
+hasattr()  # 用于判断对象是否包含对应的属性
+# hasattr(object, name)  # object：对象  name：字符串，属性名
+class Coordinate:
+    x = 10
+    y = 0
+print1 = Coordinate()
+print(hasattr(print1, 'x'))
 
-__import__()
+round()  # 返回浮点数x的四舍五入值
+# round(x[, n])  # x：数字表达式  n：表示从小数点位数，其中x需要四舍五入，默认值为0  # round(56.23, 1)
 
-complex()
+delattr()  # 用于删除属性
+# delattr(x, 'foobar')相当于del x.foobar
+# delattr(object, name)  # object：对象  name：必须是对象的属性
+class Coordubate:
+    x = 10
+    y = 0
+delattr(Coordinate, 'x')  # 删掉x属性
 
-hasattr()
+hash()  # 用于获取一个对象（字符串或数值等）的哈希值
+# hash(object)  # object：对象  # hash('test')
 
-max()
+memoryview()  # 返回给定参数的内存查看对象（Momory view）
+# 所谓内存查看对象，是指对支持缓冲区协议的数据进行包装，在不需要复制对象基础上允许python代码访问
+# memoryview(obj)  # obj：对象  # v = memoryview('sun')   v[1]  # 'u'
 
-round()
-
-delattr()
-
-hash()
-
-memoryview()
-
-set()
+set()  # 创建一个无序不重复元素集，可以进行关系测试，删除重复数据，还可以计算交集、差集、并集等
+# class set([iterable])  # iterable：可迭代对象  # x = set('runoob')
 
 
 

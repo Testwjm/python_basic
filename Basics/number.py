@@ -16,15 +16,29 @@
 # 数学函数
 # abs(x)  描述：返回数字的绝对值，如abs(-10) 返回 10
 # ceil(x)  描述：返回一个大于或等于 x 的的最小整数，如math.ceil(4.1) 返回 5、math.ceil(-45.17)返回-45
+# floor(x)  描述：返回数字的下舍整数，小于或等于 x，如math.floor(4.9)返回 4
 # exp(x)  描述：返回e的x次幂(ex),如math.exp(1) 返回2.718281828459045
 # fabs(x)  描述：返回数字的绝对值，如math.fabs(-10) 返回10.0
-# floor(x)  描述：返回数字的下舍整数，小于或等于 x，如math.floor(4.9)返回 4
-# log(x)  描述：log() 方法返回x的自然对数，x > 0
-# log10(x)	描述：log10() 方法返回以10为基数的x对数，x>0
-# max(x1, x2,...)  描述：返回给定参数的最大值，参数可以为序列
-# min(x1, x2,...)  描述：返回给定参数的最小值，参数可以为序列
-# modf(x)  描述：返回x的整数部分与小数部分，两部分的数值符号与x相同，整数部分以浮点型表示
-# pow(x, y)  描述：x**y 运算后的值
-# round(x [,n])  描述：返回浮点数x的四舍五入值，如给出n值，则代表舍入到小数点后的位数
-# sqrt(x)  描述：返回数字x的平方根
+# log(x)  描述：log() 方法返回x的自然对数，x > 0，如math.log(1)
+# log10(x)	描述：log10() 方法返回以10为基数的x对数，x>0，如math.log10(1)
+# max(x1, x2,...)  描述：返回给定参数的最大值，参数可以为序列，如max(1, 11, 111)
+# min(x1, x2,...)  描述：返回给定参数的最小值，参数可以为序列，如min(-1, -11, -111)
+# modf(x)  描述：返回x的整数部分与小数部分，两部分的数值符号与x相同，整数部分以浮点型表示，如math.modf(1.12)
+# pow(x, y)  描述：x**y 运算后的值，如pow(10, 2)
+# round(x [,n])  描述：返回浮点数x的四舍五入值，如给出n值，则代表舍入到小数点后的位数，如round(1.234, 2)
+# sqrt(x)  描述：返回数字x的平方根，如math.sqrt(9)
 
+# 随机数函数
+# choice(seq)  # 返回一个列表，元组或字符串的随机项
+# import random   random.choice(seq)  # seq：可以是一个列表，元组或字符串
+# random.choice(range(10))  random.choice([1, 2, 3])   random.choice('ran')
+
+# randrange()  # 返回指定递增基数集合中的一个随机数，基数缺省值为1
+# import random  random.randrange([start,] stop[, step])  # start：指定范围内的开始值，包含在范围内  stop：指定范围内的结束值，
+# 不包含在范围内  step：指定递增基数
+# random.randrange(1,6,2)  random.randrange(100)
+
+# random()  # 返回随机生成的一个实数，它在0到1范围内
+# import random  random.random()  # 没有参数  # random.random()
+
+# seed()  # 改变随机数生成器的种子，可以在调用其他随机模块函数之前调用此函数
