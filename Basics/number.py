@@ -42,3 +42,49 @@
 # import random  random.random()  # 没有参数  # random.random()
 
 # seed()  # 改变随机数生成器的种子，可以在调用其他随机模块函数之前调用此函数
+# import random  random.seed([x])  # 改变随机数生成器的种子seed，如果你不了解其原理，你不必特别去设定seed，Python会帮你选择seed
+# import random  random.seed()  print ("使用默认种子生成随机数：", random.random())
+# random.seed(10)  print ("使用整数种子生成随机数：", random.random())
+# random.seed('hello', 2)  print ("使用字符串种子生成随机数：", random.random())
+
+# shuffle()  # 将序列的所有元素随机排序
+# import random  random.shuffle(lst)  # lst：列表
+# list = [1, 2, 5, 10]  random.shuffle(list)
+
+# uniform()  # 将随机生成下一个实数，他在[x,y]范围内
+# import random  random.uniform(x, y)  # x：随机数的最小值  y：随机数的最大值  # random.unform(1, 5)
+
+# 三角函数
+# acos()  # 返回x的反余弦弧度值
+# import math  math.acos(x)  # x：-1到1之间的数值，如果x是大于1，会产生一个错误值  # math.acos(0.64)
+
+# asin()  # 返回x的反正弦弧度值
+# import math math.asin(x)  # x：-1到1之间的数值，如果x是大于1.会产生一个错误值  # math.asin(0.64)
+
+# atan()  # 返回x的反正切弧度值
+# import math math.atan(x)  # x：一个数值  # math.atan(10)
+
+# atan2()  # 返回给的的x及y坐标值的反正切值
+# import math  math.atan2(y, x)  # x,y：一个数值  #  math.atan2(10, 20)
+
+# cos()  # 返回x的弧度的余弦值
+# import math  math.cos(x)  # x：一个数值  # math.cos(3)
+
+# hypost()  # 返回欧几里德范数 sqrt(x*x + y*y)
+# import math  math.hypost(x,y)  # x,y：一个数值  # math.hypost(3, 2)
+
+# sin()  # 返回x的弧度的正弦值
+# import math  math.sin(x)  # x：一个数值  # math.sin(3)
+
+# tan()  # 返回x的弧度的正切值
+# import math math.tan(x)  # x：一个数值  # math.tan(3)
+
+# degrees()  # 将弧度转换为角度
+# import math math.degrees(x)  # x：一个数值  # math.degrees(3)
+
+# radians()  # 将角度转换为弧度
+# import math  math.radians(x)  # x：一个数值  # math.radians(3)
+
+# 数学常量
+# 常量：pi  # 描述：数学常量pi（圆周率，一般以π来表示）
+# 常量：e   # 描述：数学常量e，e即自然常数（自然常数）
