@@ -86,3 +86,37 @@ print(para_str)
 # str.count(sub, start= 0,end=len(string))  # sub：搜索子字符串  start：字符串开始搜索的位置。默认为第一个字符,第一个字符索引值为0
 # end：字符串中结束搜索的位置。字符中第一个字符的索引为 0。默认为字符串的最后一个位置
 # a = 'www.baidu.com'  sub='w'  a.count(sub, 0, 10)
+
+# decode()  # 以指定的编码格式解码bytes对象，默认编码为‘utf-8’
+# bytes.decode(encoding='utf-8', errors='strict')  # encoding：要使用的编码，如‘utf-8’  errors：设置不同错误的处理方案，
+# 默认为 'strict',意为编码错误引起一个UnicodeError。 其他可能得值有 'ignore', 'replace', 'xmlcharrefreplace', 'backslashreplace'
+# 以及通过 codecs.register_error() 注册的任何值
+# a='百度'  a.encode('UTF-8', 'strict').decode('utf-8','strict')
+
+# encode()  # 以指定的编码格式编码字符串，errors参数可以指定不同的错误处理方案
+# str.encode(encoding='UTF-8', errors='strict')  # encoding：要使用的编码，如：UTF-8   errors：设置不同错误的处理方案，
+# 默认为 'strict',意为编码错误引起一个UnicodeError。 其他可能得值有 'ignore', 'replace', 'xmlcharrefreplace', 'backslashreplace'
+# 以及通过 codecs.register_error() 注册的任何值。
+# a = '百度'  a.encode('UTF-8', 'strict')
+
+# endswith()  # 用于判断字符串是否以指定后缀结尾，如果以指定后缀结尾返回 True，否则返回 False。可选参数 "start" 与 "end" 为检索字符串的开始与结束位置
+# str.endswith(suffix[, start[, end]])   # suffix：该参数可以是一个字符串或者是一个元素   start：字符串中的开始位置  end：字符中结束位置
+# str = 'run'  s = 'n'  str.endswith(s)
+
+# expandtabs()  # 把字符串中的tab符号('\t')转为空格，tab符号('\t')默认的空格是8
+# str.expandtabs(tabsize=8)   # tabsize：指定转换字符串中的 tab 符号('\t')转为空格的字符数
+# a  = 'this is\tstring'   a.expandtabs(16)
+
+# find()  # 检测字符串中是否包含子字符串 str ，如果指定 beg（开始） 和 end（结束） 范围，则检查是否包含在指定范围内，
+# 如果指定范围内如果包含指定索引值，返回的是索引值在字符串中的起始位置。如果不包含索引值，返回-1
+# str.find(str, beg=0, end=len(string))  # str：指定检索的字符串  beg：开始索引，默认为0  end：结束索引，默认为字符串的长度
+# str1 = "Runoob example....wow!!!"  str2 = "exam"  str1.index(str2)
+
+# index()  # 检测字符串中是否包含子字符串 str ，如果指定 beg（开始） 和 end（结束） 范围，则检查是否包含在指定范围内，
+# 该方法与 python find()方法一样，只不过如果str不在 string中会报一个异常
+# str.index(str, beg=0, end=len(string))  # str：指定检索的字符串  # beg：开始索引，默认为0  # end：结束索引，默认为字符串的长度
+# str1 = "Runoob example....wow!!!"  str2 = "exam"  str1.index(str2)
+
+# isalnum()  # 检测字符串是否由字母和数字组成
+# str.isalnum()  # str = "runoob2016"  str.isalnum()
+
