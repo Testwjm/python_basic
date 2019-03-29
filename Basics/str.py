@@ -120,3 +120,69 @@ print(para_str)
 # isalnum()  # 检测字符串是否由字母和数字组成
 # str.isalnum()  # str = "runoob2016"  str.isalnum()
 
+# isalpha()  # 检测字符串是否只由字母组成
+# str.isalpha()  # str = 'run'  str.isalpha()
+
+# isdigit()  # 检测字符串是否只由数字组成
+# str.isdigit()  # str='123'  str.isdigit()
+
+# islower()  # 检测字符串是否由小写字母组成
+# str.islower()  # str='run'  str.islower()
+
+# isnumeric()  # 检测字符串是否由数字组成，这种方法只针对unicode对象
+# str.isnumeric()  # str='123'  str.isnumeric()
+
+# isspace()  # 检测字符串是否只由空白字符组成
+# str.isspace()  # str='   '  str.isspace
+
+# istitle()  # 检测字符串中所有的单词拼写首字母是否为大写，且其他字母为小写
+# str.istitle()  # str='This Is'  str.istitle()
+
+# isupper()  # 检测字符串中所有的字母是否都为大写
+# str.isupper()  # str='THIS'  str.isupper()
+
+# join()  # 用于将序列中的元素以指定的字符连接生成一个新的字符串
+# str.join(sequence)  # sequence：要连接的元素序列  # s1='-'  seq = ("r", "u", "n")  s1.join(seq)
+
+# len()  # 返回对象（字符、列表、元组等）长度或项目个数
+# len(s)  # s：对象  # str='run'  len(str)
+
+# ljust()  # 返回一个原字符串左对齐,并使用空格填充至指定长度的新字符串。如果指定的长度小于原字符串的长度则返回原字符串
+# str.ljust(width[, fillchar])  # width：指定字符串长度  fillchar：填充字符，默认为空格  # str='run'  str.ljust(50, '*')
+
+# lower()  # 转换字符串中所有大写字符为小写
+# str.lower()  # str='LLooWW'  str.lower()
+
+# lstrip() # 用于截掉字符串左边的空格或指定字符
+# str.lstrip([chars])  # chars：指定截取的字符  # str='88888run88'  # str.lstrip('8')
+
+# maketrans()  # 用于创建字符映射的转换表，对于接受两个参数的最简单的调用方式，第一个参数是字符串，表示需要转换的字符，
+# 第二个参数也是字符串表示转换的目标
+# 两个字符串的长度必须相同，为一一对应的关系
+# str.maketrans(intab, outtab)  # intab：字符串中要替代的字符组成的字符串  outtab：相应的映射字符的字符串
+# intab = "aeiou"  outtab = "12345"  trantab = str.maketrans(intab, outtab)  str = "this is string example....wow!!!"
+# str.translate(trantab)
+
+# max()  # 返回字符串中最大的字母
+# max(str)  # str：字符串  # str='run'  max(str)
+
+# min()  # 返回字符串中最小的字母
+# min(str)  # str：字符串  # str='run'  min(str)
+
+# replace() 方法把字符串中的 old（旧字符串） 替换成 new(新字符串)，如果指定第三个参数max，则替换不超过 max 次
+# str.replace(old, new[, max])  # old：将被替换的子字符串  new：新字符串，用于替换old子字符串  max：可选字符串, 替换不超过 max 次
+# str = 'this is a'  str.replace('is', 'was', 3)
+
+# rfind()  # 字符串最后一次出现的位置，如果没有匹配项则返回-1
+# str.rfind(str, beg=0 end=len(string))  # str：查找的字符串  beg：开始查找的位置，默认为0  end：结束查找位置，默认为字符串的长度
+# str1='this is A'  str2='is'  str1.rfind(str2, 0, 10)
+
+# rindex()  # 返回子字符串 str 在字符串中最后出现的位置，如果没有匹配的字符串会报异常，你可以指定可选参数[beg:end]设置查找的区间
+# str.rindex(str, beg=0 end=len(string))  # str：查找的字符串  beg：开始查找的位置，默认为0  end：结束查找位置，默认为字符串的长度
+# str1='this is A'  str2='is'  str1.rindex(str2, 0, 10)
+
+# rjust()  # 返回一个原字符串右对齐,并使用空格填充至长度 width 的新字符串。如果指定的长度小于字符串的长度则返回原字符串
+# str.rjust(width[, fillchar])  # width：指定填充指定字符后中字符串的总长度  # fillchar：填充的字符，默认为空格
+# str='run'  str.rjust(50, '*')
+
+# 
