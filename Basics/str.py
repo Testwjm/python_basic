@@ -185,4 +185,45 @@ print(para_str)
 # str.rjust(width[, fillchar])  # width：指定填充指定字符后中字符串的总长度  # fillchar：填充的字符，默认为空格
 # str='run'  str.rjust(50, '*')
 
-# 
+# rstrip()  # 删除 string 字符串末尾的指定字符（默认为空格）
+# str.rstrip([chars])  # chars：指定删除的字符（默认为空格）  # str='this is ***'  str.rstrip('*')
+
+# split()  # 通过指定分隔符对字符串进行切片，如果参数 num 有指定值，则仅分隔 num+1 个子字符串
+# str.split(str="", num=string.count(str))  # str：分隔符，默认为所有的空字符，包括空格、换行(\n)、制表符(\t)等
+# num：分割次数。默认为 -1, 即分隔所有   # str='this is '  str.split('i', 1)
+
+# splitlines()   # 按照行('\r', '\r\n', \n')分隔，返回一个包含各行作为元素的列表，如果参数 keepends 为 False，不包含换行符，如果为 True，则保留换行符
+# str.splitlines([keepends])  # keepends：在输出结果里是否去掉换行符('\r', '\r\n', \n')，默认为 False，不包含换行符，如果为 True，则保留换行符
+# 'ab c\n\nde fg\rkl\r\n'.splitlines(True)
+
+# startswith()  # 用于检查字符串是否是以指定子字符串开头，如果是则返回 True，否则返回 False。如果参数 beg 和 end 指定值，则在指定范围内检查
+# str.startswith(substr, beg=0,end=len(string))  # str：检测的字符串  # substr：指定的子字符串  # strbeg：可选参数用于设置字符串检测的起始位置
+# strend：可选参数用于设置字符串检测的结束位置
+# str = 'this is a'  str.startswith('this', 0, 10)
+
+# strip()  # 用于移除字符串头尾指定的字符（默认为空格）或字符序列
+# 注意：该方法只能删除开头或是结尾的字符，不能删除中间部分的字符
+# str.strip([chars])  # chars：移除字符串头尾指定的字符序列  # str='* this is a *'  str.strip('*')
+
+# swapcase()  # 用于对字符串的大小写字母进行转换
+# str.swapcase()  # str='This is A'  str.swapcase()
+
+# title()  # 返回"标题化"的字符串,就是说所有单词的首个字母转化为大写，其余字母均为小写
+# str.title()  # str='this is a'  str.title()
+
+# translate()  # 根据参数table给出的表(包含 256 个字符)转换字符串的字符,要过滤掉的字符放到 deletechars 参数中
+# str.translate(table)
+# bytes.translate(table[, delete])
+# bytearray.translate(table[, delete])  # table：翻译表，翻译表是通过 maketrans() 方法转换而来  deletechars：字符串中要过滤的字符列表
+# intab = "aeiou"  outtab = "12345"  trantab = str.maketrans(intab, outtab)  # 制作翻译表
+#  str = "this is string example....wow!!!"  print(str.translate(trantab))
+
+# upper()  # 将字符串中的小写字母转为大写字母
+# str.upper()  # str='this is a'  str.upper()
+
+# zfill()  # 返回指定长度的字符串，原字符串右对齐，前面填充0
+# str.zfill(width)  # width：指定字符串的长度。原字符串右对齐，前面填充0  # str='this is a'  str.zfill(40)
+
+# isdecimal() 方法检查字符串是否只包含十进制字符。这种方法只存在于unicode对象
+# str.isdecimal()  # str='123456'  str.isdecimal()
+
