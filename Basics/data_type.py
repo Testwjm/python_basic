@@ -1,4 +1,4 @@
-# 基本数据类型
+"""基本数据类型"""
 dir()  # 对象   # 例子：dir(int)
 help()  # 对象或对象＋方法   # 例子：help（int）  或者   help（int.imag）
 
